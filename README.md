@@ -1,25 +1,5 @@
 # overfrp
-
 ## 运行服务端
-### 1、管理面板模式 - 完整部署
-    ./overfrp-server manage
-
-创建管理面板。
-
-    --local [ip:port]
-指定监听IP(0.0.0.0代表监听所有ip，公网可访问)和端口
-
-    --user [username:password]
-指定登录用户和密码，不指定则允许所有人访问，可进入控制面板重新设置密码
-
-例如：运行 ./overfrp-server manage --local 127.0.0.1:12568 --user "1:1"，访问 https://127.0.0.1:12568 使用用户名1/密码1即可登录控制面板。
-注意：必须用https来访问管理面板。
-
-./overfrp-server
-
-启动管理面板。
-
-### 2、命令行模式 - 快速部署
     ./overfrp-server server
 直接运行命令，启动服务端。
 
@@ -51,7 +31,7 @@
 
 ./overfrp-server server --listen 0.0.0.0:7659 --suffix local.pub.dns-txt.com --certificate ./.assets/penetrate.cer --private-key ./.assets/penetrate.key --allow-register
 
-## 客户端命令
+## 运行客户端
     ./overfrp-client publish
 
 创建通道。
@@ -82,3 +62,22 @@
 示例
 
 ./overfrp-client publish --server xxxxxx:7659 --identifier BIP16kkGbU2oZv7KSx6S6w== --target baidu.com:443 --ssl-off-loading --keep-http-host
+
+
+## 服务端管理面板模式 - 完整部署，功能丰富
+    ./overfrp-server manage
+
+创建管理面板。
+
+    --local [ip:port]
+指定监听IP(0.0.0.0代表监听所有ip，公网可访问)和端口
+
+    --user [username:password]
+指定登录用户和密码，不指定则允许所有人访问，可进入控制面板重新设置密码
+
+例如：运行 ./overfrp-server manage --local 127.0.0.1:12568 --user "1:1"，访问 https://127.0.0.1:12568 使用用户名1/密码1即可登录控制面板。
+注意：必须用https来访问管理面板。
+
+./overfrp-server
+
+启动管理面板。
