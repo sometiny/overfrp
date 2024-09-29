@@ -1,7 +1,14 @@
 # overfrp
 ## 启动服务端
 ```bash
-./overfrp-server server --listen [ip:port] --suffix [domainname] --certificate [certificate file] --private-key [private-key file] --authentication-required --allow-register --botnet-persistence
+./overfrp-server server \
+    --listen [ip:port] \
+    --suffix [domainname] \
+    --certificate [certificate file] \
+    --private-key [private-key file] \
+    --authentication-required \
+    --allow-register \
+    --botnet-persistence
 ```
 
 ### 参数
@@ -24,12 +31,23 @@
 示例
 
 ```bash
-./overfrp-server server --listen "0.0.0.0:7659" --suffix "local.pub.dns-txt.com" --certificate "./.assets/penetrate.cer" --private-key "./.assets/penetrate.key" --allow-register
+./overfrp-server server \
+    --listen "0.0.0.0:7659" \
+    --suffix "local.pub.dns-txt.com" \
+    --certificate "./.assets/penetrate.cer" \
+    --private-key "./.assets/penetrate.key" \
+    --allow-register
 ```
 
 ## 运行客户端
 ```bash
-./overfrp-client publish --server [host:port] --identifier [identifier] --authentication [name] --target [host:port] --ssl-off-loading --keep-http-host
+./overfrp-client publish \
+    --server [host:port] \
+    --identifier [identifier] \
+    --authentication [name] \
+    --target [host:port] \
+    --ssl-off-loading \
+    --keep-http-host
 ```
 ### 参数
 ```--server [host:port]``` 指定通道使用的服务器
@@ -49,14 +67,21 @@
 示例
 
 ```bash
-./overfrp-client publish --server "127.0.0.1:7659" --identifier "BIP16kkGbU2oZv7KSx6S6w==" --target "baidu.com:443" --ssl-off-loading --keep-http-host
+./overfrp-client publish \
+    --server "127.0.0.1:7659" \
+    --identifier "BIP16kkGbU2oZv7KSx6S6w==" \
+    --target "baidu.com:443" \
+    --ssl-off-loading \
+    --keep-http-host
 ```
 
 
 ## 服务端管理面板模式 - 完整部署，功能丰富
 ```bash
 # 配置管理面板
-./overfrp-server manage --local [ip:port] --user [username:password]
+./overfrp-server manage \
+    --local [ip:port] \
+    --user [username:password]
 ```
 ### 参数
 ```--local [ip:port]``` 指定监听IP(0.0.0.0代表监听所有ip，公网可访问)和端口
@@ -67,7 +92,9 @@
 
 ```bash
 # 配置管理面板
-./overfrp-server manage --local 127.0.0.1:12568 --user "admin:admin"
+./overfrp-server manage \
+    --local 127.0.0.1:12568 \
+    --user "admin:admin"
 # 不添加任何参数，直接运行，启动管理面板。
 ./overfrp-server
 ``` 
