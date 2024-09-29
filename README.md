@@ -49,7 +49,7 @@
 
 示例
 
-./overfrp-server server --listen 0.0.0.0:7659 --suffix local.dev.abcdefg.net --certificate ./.assets/penetrate.cer --private-key ./.assets/penetrate.key --allow-register
+./overfrp-server server --listen 0.0.0.0:7659 --suffix local.pub.dns-txt.com --certificate ./.assets/penetrate.cer --private-key ./.assets/penetrate.key --allow-register
 
 ## 客户端命令
     ./overfrp-client publish
