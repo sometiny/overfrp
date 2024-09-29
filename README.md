@@ -1,37 +1,5 @@
 # overfrp
 
-## 客户端命令
-    ./overfrp-client publish
-
-创建通道。
-
-    --server [host:port]
-指定通道使用的服务器
-
-    --identifier [identifier]
-指定通道标识
-
-    --authentication [name]
-如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client keygen [name]”生成，服务器需要导入公钥
-    
-    --target [host:port]
-
-指定绑定目标，多个目标使用“;”分割。
-    
-    --ssl-off-loading
-
-可选参数，如果指定的目标为HTTPS，需要指定本参数
-    
-    --keep-http-host
-
-可选参数，默认HTTP请求头中的Host时服务器自动分配的域名。
-
-如果--target指定的目标站点需要绑定域名，需要指定本参数，HTTP请求头的Host字段将被修改为--target中的主机
-    
-示例
-
-./overfrp-client publish --server xxxxxx:443 --identifier BIP16kkGbU2oZv7KSx6S6w== --target baidu.com:443 --ssl-off-loading --keep-http-host
-
 ## 运行服务端
 ### 1、管理面板模式 - 完整部署
     ./overfrp-server manage
@@ -80,4 +48,36 @@
 
 示例
 
-./overfrp-penetrate server --listen 0.0.0.0:12568 --suffix local.dev.abcdefg.net --certificate ./.assets/penetrate.cer --private-key ./.assets/penetrate.key --allow-register
+./overfrp-penetrate server --listen 0.0.0.0:7659 --suffix local.dev.abcdefg.net --certificate ./.assets/penetrate.cer --private-key ./.assets/penetrate.key --allow-register
+
+## 客户端命令
+    ./overfrp-client publish
+
+创建通道。
+
+    --server [host:port]
+指定通道使用的服务器
+
+    --identifier [identifier]
+指定通道标识
+
+    --authentication [name]
+如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client keygen [name]”生成，服务器需要导入公钥
+    
+    --target [host:port]
+
+指定绑定目标，多个目标使用“;”分割。
+    
+    --ssl-off-loading
+
+可选参数，如果指定的目标为HTTPS，需要指定本参数
+    
+    --keep-http-host
+
+可选参数，默认HTTP请求头中的Host时服务器自动分配的域名。
+
+如果--target指定的目标站点需要绑定域名，需要指定本参数，HTTP请求头的Host字段将被修改为--target中的主机
+    
+示例
+
+./overfrp-client publish --server xxxxxx:7659 --identifier BIP16kkGbU2oZv7KSx6S6w== --target baidu.com:443 --ssl-off-loading --keep-http-host
