@@ -12,9 +12,10 @@
     --user [username:password]
 指定登录用户和密码，不指定则允许所有人访问，可进入控制面板重新设置密码
 
-例如：运行 ./overfrp-penetrate manage --local 127.0.0.1:12568 --user "1:1"，访问 https://127.0.0.1:12568 使用用户名1/密码1即可登录控制面板
+例如：运行 ./overfrp-server manage --local 127.0.0.1:12568 --user "1:1"，访问 https://127.0.0.1:12568 使用用户名1/密码1即可登录控制面板。
+注意：必须用https来访问管理面板。
 
-./overfrp-penetrate
+./overfrp-server
 
 启动管理面板。
 
@@ -48,7 +49,7 @@
 
 示例
 
-./overfrp-penetrate server --listen 0.0.0.0:7659 --suffix local.dev.abcdefg.net --certificate ./.assets/penetrate.cer --private-key ./.assets/penetrate.key --allow-register
+./overfrp-server server --listen 0.0.0.0:7659 --suffix local.dev.abcdefg.net --certificate ./.assets/penetrate.cer --private-key ./.assets/penetrate.key --allow-register
 
 ## 客户端命令
     ./overfrp-client publish
