@@ -1,0 +1,67 @@
+[16:33:54][Log][127.0.0.1:7659]Connecting...
+[16:33:54][Log][127.0.0.1:7659]Login...
+[16:33:54][Log][127.0.0.1:7659]Client Online[ZkkxCasICEmSRk4kI9CqwA==]!
+[16:50:11][Log][127.0.0.1:7659]Zhger.Sparkle.Extensions.EofException: stream was closed by peer?
+   at overfrp-client!<BaseAddress>+0x1b930f
+--- End of stack trace from previous location ---
+   at overfrp-client!<BaseAddress>+0xf1a98
+   at overfrp-client!<BaseAddress>+0xf3a5e
+   at overfrp-client!<BaseAddress>+0xf397f
+   at overfrp-client!<BaseAddress>+0x19b5b8
+--- End of stack trace from previous location ---
+   at overfrp-client!<BaseAddress>+0xf1a98
+   at overfrp-client!<BaseAddress>+0xf3a5e
+   at overfrp-client!<BaseAddress>+0xf397f
+   at overfrp-client!<BaseAddress>+0x19b3d5
+--- End of stack trace from previous location ---
+   at overfrp-client!<BaseAddress>+0xf1a98
+   at overfrp-client!<BaseAddress>+0xf3a5e
+   at overfrp-client!<BaseAddress>+0xf397f
+   at overfrp-client!<BaseAddress>+0x19b03a
+[16:50:11][Log][127.0.0.1:7659]ReConnecting...
+[16:50:13][Log][127.0.0.1:7659]Connecting...
+[16:50:15][Log][127.0.0.1:7659]System.Net.Sockets.SocketException (10061): 由于目标计算机积极拒绝，无法连接。
+   at overfrp-client!<BaseAddress>+0x863c7
+   at overfrp-client!<BaseAddress>+0x862ee
+   at overfrp-client!<BaseAddress>+0x128d08
+[16:50:15][Log][127.0.0.1:7659]ReConnecting...
+[16:50:17][Log][127.0.0.1:7659]Connecting...
+[16:50:19][Log][127.0.0.1:7659]System.Net.Sockets.SocketException (10061): 由于目标计算机积极拒绝，无法连接。
+   at overfrp-client!<BaseAddress>+0x863c7
+   at overfrp-client!<BaseAddress>+0x862ee
+   at overfrp-client!<BaseAddress>+0x128d08
+[16:50:19][Log][127.0.0.1:7659]ReConnecting...
+[16:50:21][Log][127.0.0.1:7659]Connecting...
+[16:50:23][Log][127.0.0.1:7659]System.Net.Sockets.SocketException (10061): 由于目标计算机积极拒绝，无法连接。
+   at overfrp-client!<BaseAddress>+0x863c7
+   at overfrp-client!<BaseAddress>+0x862ee
+   at overfrp-client!<BaseAddress>+0x128d08
+[16:50:23][Log][127.0.0.1:7659]ReConnecting...
+[16:50:25][Log][127.0.0.1:7659]Connecting...
+[16:50:27][Log][127.0.0.1:7659]System.Net.Sockets.SocketException (10061): 由于目标计算机积极拒绝，无法连接。
+   at overfrp-client!<BaseAddress>+0x863c7
+   at overfrp-client!<BaseAddress>+0x862ee
+   at overfrp-client!<BaseAddress>+0x128d08
+[16:50:27][Log][127.0.0.1:7659]ReConnecting...
+[16:50:29][Log][127.0.0.1:7659]Connecting...
+[16:50:32][Log][127.0.0.1:7659]System.Net.Sockets.SocketException (10061): 由于目标计算机积极拒绝，无法连接。
+   at overfrp-client!<BaseAddress>+0x863c7
+   at overfrp-client!<BaseAddress>+0x862ee
+   at overfrp-client!<BaseAddress>+0x128d08
+[16:50:32][Log][127.0.0.1:7659]ReConnecting...
+[16:50:34][Log][127.0.0.1:7659]Connecting...
+[16:50:36][Log][127.0.0.1:7659]System.Net.Sockets.SocketException (10061): 由于目标计算机积极拒绝，无法连接。
+   at overfrp-client!<BaseAddress>+0x863c7
+   at overfrp-client!<BaseAddress>+0x862ee
+   at overfrp-client!<BaseAddress>+0x128d08
+[16:50:36][Log][127.0.0.1:7659]ReConnecting...
+[16:50:38][Log][127.0.0.1:7659]Connecting...
+[16:50:40][Log][127.0.0.1:7659]System.Net.Sockets.SocketException (10061): 由于目标计算机积极拒绝，无法连接。
+   at overfrp-client!<BaseAddress>+0x863c7
+   at overfrp-client!<BaseAddress>+0x862ee
+   at overfrp-client!<BaseAddress>+0x128d08
+[16:50:40][Log][127.0.0.1:7659]ReConnecting...
+[16:50:42][Log][127.0.0.1:7659]Connecting...
+[16:50:43][Log][127.0.0.1:7659]Login...
+[16:50:43][Log][127.0.0.1:7659]Client Online[ZkkxCasICEmSRk4kI9CqwA==]!
+[16:50:49][Log][127.0.0.1:7659]Client Close!
