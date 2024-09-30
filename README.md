@@ -1,4 +1,25 @@
 # overfrp
+## 开始
+下载对应操作系统的二进制文件。
+
+以下代码为可正常运行的本地测试。
+```bash
+# 1、启动服务端
+./overfrp-server server --listen "127.0.0.1:7659" --suffix "local.pub.dns-txt.com" --allow-register
+
+
+# 2、向服务器注册通道标识，用于发布服务，通道标识可复用，注册一次即可。
+./overfrp-client register --server "127.0.0.1:7659"
+
+# 3、发布服务，--identifier指定前面注册的通道标识
+# 命令会输出临时访问地址，浏览器访问后可正常打开baidu页面
+./overfrp-client publish --server "127.0.0.1:7659" --identifier "BIP16kkGbU2oZv7KSx6S6w==" --target "www.baidu.com:443" --ssl-off-loading --keep-http-host
+# 指定--ssl-off-loading，因为我们要用http地址去访问baidu的443端口，需要卸载baidu的ssl。
+# 指定--keep-http-host，因为浏览器默认发送的host头不是www.baidu.com，这里需要保持--target中指定的host。
+
+```
+实际应用时，应该将`overfrp-server`部署在其他人可以访问的服务器上，并且使用`--suffix`指定自己的一个域名，域名需要做通配符的解析，使用`CNAME`或者`A`记录指向服务器。
+
 ## 启动服务端
 ```bash
 ./overfrp-server server \
@@ -28,16 +49,18 @@
 
 ```--botnet-persistence``` 持久化存储通道
 
-示例
 
+## 客户端
+### 注册通道标识
 ```bash
-./overfrp-server server \
-    --listen "0.0.0.0:7659" \
-    --suffix "local.pub.dns-txt.com" \
-    --allow-register
+./overfrp-client register --server [host:port] --authentication [name]
 ```
+#### 参数
+```--server [host:port]``` 指定通道使用的服务器
 
-## 运行客户端
+```--authentication [name]``` 如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client keygen [name]”生成，服务器需要导入公钥
+
+### 发布通道
 ```bash
 ./overfrp-client publish \
     --server [host:port] \
@@ -47,7 +70,7 @@
     --ssl-off-loading \
     --keep-http-host
 ```
-### 参数
+#### 参数
 ```--server [host:port]``` 指定通道使用的服务器
 
 ```--identifier [identifier]``` 指定通道标识
@@ -61,25 +84,14 @@
 ```--keep-http-host``` 可选参数，默认HTTP请求头中的Host时服务器自动分配的域名。
 
 如果--target指定的目标站点需要绑定域名，需要指定本参数，HTTP请求头的Host字段将被修改为--target中的主机
-    
-示例
-
-```bash
-./overfrp-client publish \
-    --server "127.0.0.1:7659" \
-    --identifier "BIP16kkGbU2oZv7KSx6S6w==" \
-    --target "baidu.com:443" \
-    --ssl-off-loading \
-    --keep-http-host
-```
 
 
-## 服务端管理面板模式 - 完整部署，功能丰富
+
+## 服务端管理面板模式
+控制面板有更丰富的配置功能，例如鉴权、域名绑定、服务期迁移、通道持久化等。
 ```bash
 # 配置管理面板
-./overfrp-server manage \
-    --local [ip:port] \
-    --user [username:password]
+./overfrp-server manage --local [ip:port] --user [username:password]
 ```
 ### 参数
 ```--local [ip:port]``` 指定监听IP(0.0.0.0代表监听所有ip，公网可访问)和端口
@@ -90,9 +102,8 @@
 
 ```bash
 # 配置管理面板
-./overfrp-server manage \
-    --local 127.0.0.1:12568 \
-    --user "admin:admin"
+./overfrp-server manage --local 127.0.0.1:12568 --user "admin:admin"
+
 # 不添加任何参数，直接运行，启动管理面板。
 ./overfrp-server
 ``` 
