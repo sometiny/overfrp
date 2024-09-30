@@ -35,7 +35,7 @@
 ./overfrp-server server --listen [ip:port] --allow-register
 ```
 
-### 参数
+##### 参数
 ```--listen [ip:port]``` 指定监听IP(0.0.0.0代表监听所有ip，公网可访问)和端口
 
 ```--allow-register``` 可选参数，允许用户注册
@@ -46,7 +46,7 @@
 ```bash
 ./overfrp-client register --server [host:port] --authentication [name]
 ```
-#### 参数
+##### 参数
 ```--server [host:port]``` 指定通道使用的服务器
 
 ```--authentication [name]``` 如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client keygen [name]”生成，服务器需要导入公钥
@@ -55,7 +55,7 @@
 ```bash
 ./overfrp-client publish --server [host:port] --identifier [identifier] --authentication [name]
 ```
-#### 参数
+##### 参数
 ```--server [host:port]``` 指定通道使用的服务器
 
 ```--identifier [identifier]``` 指定通道标识
@@ -71,7 +71,7 @@
     --identifier [identifier] \
     --target [target]
 ```
-#### 参数
+##### 参数
 ```--listen [host:port]``` 本地监听地址
 
 ```--server [host:port]``` 指定通道使用的服务器
@@ -95,7 +95,7 @@
 # 配置管理面板
 ./overfrp-server manage --local [ip:port] --user [username:password]
 ```
-### 参数
+##### 参数
 ```--local [ip:port]``` 指定监听IP(0.0.0.0代表监听所有ip，公网可访问)和端口
 
 ```--user [username:password]``` 指定登录用户和密码，不指定则允许所有人访问，可进入控制面板重新设置密码
