@@ -24,7 +24,7 @@
 # 浏览器默认发送的host头不是www.baidu.com，需要指定--keep-http-host保持--target中指定的host。
 
 ```
-实际应用时，应该将`overfrp-server`部署在其他人可以访问的服务器上，并且使用`--suffix`指定自己的一个域名，域名需要做通配符的解析，使用`CNAME`或者`A`记录指向服务器。
+实际应用时，应该将`overfrp-server`部署在其他设备可以访问的服务器上，并且使用`--suffix`指定自己的一个域名，域名需要做通配符的解析，使用`CNAME`或者`A`记录指向服务器。
 
 ## 启动服务端
 ```bash
