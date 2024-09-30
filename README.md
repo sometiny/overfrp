@@ -24,7 +24,7 @@
 # 浏览器默认发送的host头不是www.baidu.com，需要指定--keep-http-host保持--target中指定的host。
 
 ```
-实际应用时，应该将`overfrp-server`部署在其他设备可以访问的服务器上，并且使用`--suffix`指定自己的一个域名，域名需要做通配符的解析，使用`CNAME`或者`A`记录指向服务器。
+实际应用时，应该将`overfrp-server`部署在其他设备可以访问的服务器上，并且使用`--suffix`指定自己的一个域名，域名需要做通配符的DNS解析，使用`CNAME`或者`A`记录指向服务器。
 
 ## 启动服务端
 ```bash
@@ -34,8 +34,7 @@
     --certificate [certificate file] \
     --private-key [private-key file] \
     --authentication-required \
-    --allow-register \
-    --botnet-persistence
+    --allow-register
 ```
 
 ### 参数
@@ -49,11 +48,9 @@
 
 未提供证书，但用户使用HTTPS访问时，HTTPS请求将直接转发给客户端--target指定的目标，并且客户端不能指定--ssl-off-loading和--keep-http-host参数。同时target需要绑定HTTPS访问域名对应的SSL证书
 
-```--authentication-required``` 要求用户登录
+```--authentication-required``` 可选参数，要求用户登录
 
-```--allow-register``` 允许用户注册
-
-```--botnet-persistence``` 持久化存储通道
+```--allow-register``` 可选参数，允许用户注册
 
 
 ## 客户端
@@ -81,7 +78,7 @@
 
 ```--identifier [identifier]``` 指定通道标识
 
-```--authentication [name]``` 如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client keygen [name]”生成，服务器需要导入公钥
+```--authentication [name]``` 可选参数，如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client keygen [name]”生成，服务器需要导入公钥
     
 ```--target [host:port]``` 指定绑定目标，多个目标使用“;”分割。
     
