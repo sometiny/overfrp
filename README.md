@@ -12,11 +12,16 @@
 ./overfrp-client register --server "127.0.0.1:7659"
 
 # 3、发布服务，--identifier指定前面注册的通道标识
-./overfrp-client publish --server "127.0.0.1:7659" --identifier "register命令返回的通道标识，==结尾" --target "www.baidu.com:443" --ssl-off-loading --keep-http-host
+./overfrp-client publish \
+    --server "127.0.0.1:7659" \
+    --identifier "register命令返回的通道标识，==结尾" \
+    --target "www.baidu.com:443" \
+    --ssl-off-loading \
+    --keep-http-host
 
 # 命令会输出临时访问地址，浏览器访问后可正常打开baidu页面
-# 指定--ssl-off-loading，因为我们要用http地址去访问baidu的443端口，需要卸载baidu的ssl。
-# 指定--keep-http-host，因为浏览器默认发送的host头不是www.baidu.com，这里需要保持--target中指定的host。
+# 要用http地址去访问baidu的443端口，需要指定--ssl-off-loading卸载baidu的ssl。
+# 浏览器默认发送的host头不是www.baidu.com，需要指定--keep-http-host保持--target中指定的host。
 
 ```
 实际应用时，应该将`overfrp-server`部署在其他人可以访问的服务器上，并且使用`--suffix`指定自己的一个域名，域名需要做通配符的解析，使用`CNAME`或者`A`记录指向服务器。
