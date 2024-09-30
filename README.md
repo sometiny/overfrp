@@ -23,8 +23,6 @@
     --ssl-off-loading \
     --keep-http-host
 
-# 本地监听 127.0.0.1:7660， 通过穿透服务端上已发布的服务将本地的7660端口数据转发到 www.baidu.com:443，对 www.baidu.com:443 的请求是由发布服务发起。
-
 # 浏览器访问 http://127.0.0.1:7660 可正常打开baidu页面（注意：用http协议，不是https协议）
 # *要用http地址去访问baidu的443端口，所以需要指定--ssl-off-loading来卸载baidu的ssl。
 # *浏览器默认发送的host头不是www.baidu.com，需要指定--keep-http-host保持--target中指定的host。
@@ -82,7 +80,7 @@
 
 ```--identifier [identifier]``` 指定通道标识
     
-```--target [host:port]``` 指定远程目标。
+```--target [host:port]``` 指定远程目标，对远程目标的请求永远是由`--identifier`关联的发布服务的设备发起。
     
 ```--ssl-off-loading``` 可选参数，如果指定的目标为HTTPS，需要指定本参数，纯TCP端口转发时，必须忽略本参数。
     
