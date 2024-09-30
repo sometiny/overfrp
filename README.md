@@ -1,20 +1,23 @@
-# overfrp
-## 开始
-下载对应操作系统的二进制文件。
+# 快速开始
+下载对应操作系统的二进制文件，然后运行相应命令。
 
-以下代码为可正常运行的本地测试。
+### 1、启动穿透服务端
 ```bash
-# 1、启动穿透服务端
 ./overfrp-server server --listen "127.0.0.1:7659" --allow-register
+```
 
-
-# 2、向服务器注册通道标识，用于发布服务，通道标识可复用，注册一次即可。
+### 2、向服务器注册通道标识，用于发布服务，通道标识可复用，注册一次即可。
+```bash
 ./overfrp-client register --server "127.0.0.1:7659"
+```
 
-# 3、发布服务，--identifier指定前面注册的通道标识
+### 3、发布服务，--identifier指定前面注册的通道标识
+```bash
 ./overfrp-client publish --server "127.0.0.1:7659" --identifier "register命令返回的通道标识，==结尾"
+```
 
-# 4、访问已发布的服务
+### 4、访问已发布的服务
+```bash
 ./overfrp-client tunnel \
     --listen "127.0.0.1:7660" \
     --server "127.0.0.1:7659" \
@@ -26,10 +29,10 @@
 # 浏览器访问 http://127.0.0.1:7660 可正常打开baidu页面（注意：用http协议，不是https协议）
 # *要用http地址去访问baidu的443端口，所以需要指定--ssl-off-loading来卸载baidu的ssl。
 # *浏览器默认发送的host头不是www.baidu.com，需要指定--keep-http-host保持--target中指定的host。
-
 ```
 实际应用时，应该将`overfrp-server`部署在其他设备可以访问的服务器上，在需要被穿透的设备上运行`publish`，将设备暴露到穿透服务端。然后用`tunnel`命令通过穿透服务端去访问远程服务器。
 
+# 命令详细介绍
 ## 启动服务端
 ```bash
 ./overfrp-server server --listen [ip:port] --allow-register
@@ -41,7 +44,7 @@
 ```--allow-register``` 可选参数，允许用户注册
 
 
-## 客户端
+## 客户端相关命令
 ### 注册通道
 ```bash
 ./overfrp-client register --server [host:port] --authentication [name]
