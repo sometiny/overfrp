@@ -1,3 +1,5 @@
 /win-x64/.identifier
 /win-x64/.assets
 /win-x64/Logs
+/win-x64/CERTIFICATE.cer
+/win-x64/CERTIFICATE.key
