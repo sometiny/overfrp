@@ -94,7 +94,7 @@ http://www-baidu-com-443-2690fb70ef47.local.locateat.net:8080
 ```
 两个url均可正常访问baidu.com，注意端口已经变成`4343`和`8080`。
 
-### 5、支持最多32个`--target`
+### 5、publish支持最多32个`--target`
 例如
 ```bash
 ./overfrp-client publish \
