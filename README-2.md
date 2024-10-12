@@ -49,8 +49,6 @@
 
 * 浏览器默认发送的host头不是www.baidu.com，需要指定--keep-http-host保持--target中指定的host。
 
-* 本用例中publish提供的是对target的单一服务，映射不同的target需要注册不同的--identifier。 
-
 
 可使用`--use-stored-identifier`自动从通道标识文件读取标识，而不需要每次指定。
 
@@ -95,3 +93,26 @@ https://www-baidu-com-443-2690fb70ef47.local.locateat.net:4343
 http://www-baidu-com-443-2690fb70ef47.local.locateat.net:8080
 ```
 两个url均可正常访问baidu.com，注意端口已经变成`4343`和`8080`。
+
+### 5、支持最多32个`--target`
+例如
+```bash
+./overfrp-client publish \
+--server "127.0.0.1:7659" \
+--identifier "EzwVZY2MtEyWmiaQ+3DvRw==" \
+--target "www.baidu.com:443" --ssl-off-loading --keep-http-host \
+--target "www.aliyun.com:443" --ssl-off-loading --keep-http-host \
+--target "www.aliyun.com:80" --keep-http-host
+
+#控制台会有如下类似输出
+#[*]frp server: 127.0.0.1:7659
+#[*]frp publishing...
+#[*]frp publish success
+#[*]已绑定域名：
+#https://www-baidu-com-443-2690fb70ef47.local.locateat.net:4343
+#http://www-baidu-com-443-2690fb70ef47.local.locateat.net:8080
+#https://www-aliyun-com-443-2690fb70ef47.local.locateat.net:4343
+#http://www-aliyun-com-443-2690fb70ef47.local.locateat.net:8080
+#https://www-aliyun-com-80-2690fb70ef47.local.locateat.net:4343
+#http://www-aliyun-com-80-2690fb70ef47.local.locateat.net:8080
+```

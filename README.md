@@ -2,6 +2,7 @@
 # 快速开始
 ```
 所有服务的访问全链路加密，具有ssh2相当的安全级别。
+流量走向：被穿透设备->服务器->客户端设备->服务器->被穿透设备。
  ```
 
 下载对应操作系统的二进制文件，然后运行相应命令。
@@ -49,6 +50,21 @@
 # 浏览器访问 http://127.0.0.1:7660 可正常打开baidu页面（注意：用http协议，不是https协议）
 # *要用http地址去访问baidu的443端口，所以需要指定--ssl-off-loading来卸载baidu的ssl。
 # *浏览器默认发送的host头不是www.baidu.com，需要指定--keep-http-host保持--target中指定的host。
+```
+
+### 5、访问已发布的服务-纯TCP（不能指定任何HTTP相关的参数）
+```bash
+./overfrp-client tunnel \
+    --listen "127.0.0.1:2222" \
+    --server "127.0.0.1:7659" \
+    --identifier "jAY+fOaqmUusiHICNZ5mhQ==" \
+    --target "127.0.0.1:22"
+
+#输出
+#port proxy started at: '127.0.0.1:2222' for '127.0.0.1:22' via '127.0.0.1:7659'
+
+#使用命令，会将本地2222端口转发到发布服务机器的22端口。
+ssh root@127.0.0.1:2222
 ```
 以上为本地测试。
 
