@@ -17,8 +17,6 @@
 #HostKey指纹：ssh-rsa SHA256 Sv1nH+y8QYnvNGNRYz7woIexC0/RTjlgUdJYrRhqcIU
 
 ```
-被穿透设备上线后，会自动绑定域名，后缀为'.local.locateat.net'。
-
 线上部署时需要指定`--suffix`为自己的域名，并增加一条带'*'的解析到自己的服务。
 
 例如，解析'*.local.locateat.net'到你自己的服务器。
