@@ -21,7 +21,7 @@
 
 例如，解析'*.local.locateat.net'到你自己的服务器。
 
-### 2、向服务端注册通道标识，用于发布服务，通道标识可复用，注册一次即可。
+### 2、向服务端注册通道标识，用于发布服务。
 ```bash
 ./overfrp-client register --server "127.0.0.1:7659"
 
@@ -48,6 +48,8 @@
 * 要用http地址去访问baidu的443端口，所以需要指定--ssl-off-loading来卸载baidu的ssl。
 
 * 浏览器默认发送的host头不是www.baidu.com，需要指定--keep-http-host保持--target中指定的host。
+
+* 本用例中publish提供的时对target的单一服务，映射不同的target需要注册不同的--identifier。 
 
 
 可使用`--use-stored-identifier`自动从通道标识文件读取标识，而不需要每次指定。
