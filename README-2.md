@@ -49,7 +49,7 @@
 
 * 浏览器默认发送的host头不是www.baidu.com，需要指定--keep-http-host保持--target中指定的host。
 
-* 本用例中publish提供的时对target的单一服务，映射不同的target需要注册不同的--identifier。 
+* 本用例中publish提供的是对target的单一服务，映射不同的target需要注册不同的--identifier。 
 
 
 可使用`--use-stored-identifier`自动从通道标识文件读取标识，而不需要每次指定。
