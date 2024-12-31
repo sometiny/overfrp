@@ -1,4 +1,5 @@
-项目地址：[https://github.com/sometiny/overfrp](https://github.com/sometiny/overfrp)
+最新版本：[https://github.com/sometiny/overfrp/releases/latest](https://github.com/sometiny/overfrp/releases/latest)
+
 # 用例：使用域名部署穿透服务器以访问内网http/https服务
 ```
 本用例中穿透服务器和内网机器之间的访问全链路加密，具有ssh2相当的安全级别。
