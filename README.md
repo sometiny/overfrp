@@ -19,7 +19,7 @@
 ./overfrp-client register --server "127.0.0.1:7659"
 
 #通道标识非固定，每次注册输出的都不一样：
-#通道注册成功，通道标识：jAY+fOaqmUusiHICNZ5mhQ==
+#注册成功，穿透标识：jAY+fOaqmUusiHICNZ5mhQ==
 #标识已保存至：/xxxxx/.identifier
 ```
 
@@ -106,7 +106,7 @@ ssh root@127.0.0.1:2222
 ### 参数
 ```--server [host:port]```指定通道使用的服务器
 
-```--authentication [name]```如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client keygen [name]”生成，服务器需要导入公钥
+```--authentication [name]```如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client newkey [name]”生成，服务器需要导入公钥
 
 ## 3、发布通道
 ```bash
@@ -117,7 +117,7 @@ ssh root@127.0.0.1:2222
 
 ```--identifier [identifier]```指定通道标识
 
-```--authentication [name]```可选参数，如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client keygen [name]”生成，服务器需要导入公钥
+```--authentication [name]```可选参数，如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client newkey [name]”生成，服务器需要导入公钥
 
 ## 4、使用通道
 ```bash
@@ -133,7 +133,7 @@ ssh root@127.0.0.1:2222
 
 ```--server [host:port]```指定通道使用的服务器
 
-```--authentication [name]```可选参数，如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client keygen [name]”生成，服务器需要导入公钥
+```--authentication [name]```可选参数，如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client newkey [name]”生成，服务器需要导入公钥
 
 ```--identifier [identifier]```指定通道标识
     
