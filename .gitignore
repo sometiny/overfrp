@@ -12,3 +12,11 @@
 /osx-x64
 /win-arm64
 /compress.ps1
+/overfrp-linux-arm64.zip
+/overfrp-linux-musl-arm64.zip
+/overfrp-linux-musl-x64.zip
+/overfrp-linux-x64.zip
+/overfrp-osx-arm64.zip
+/overfrp-osx-x64.zip
+/overfrp-win-arm64.zip
+/overfrp-win-x64.zip
