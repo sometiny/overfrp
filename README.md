@@ -1,11 +1,11 @@
-项目地址：[https://github.com/sometiny/overfrp](https://github.com/sometiny/overfrp)
-# 快速开始
 ```
 所有服务的访问全链路加密，具有ssh2相当的安全级别。
 流量走向：被穿透设备->服务器->客户端设备->服务器->被穿透设备。
  ```
-
+# 快速开始
 下载对应操作系统的二进制文件，然后运行相应命令。
+
+最新版本：[https://github.com/sometiny/overfrp/releases/latest](https://github.com/sometiny/overfrp/releases/latest)
  
 ### 1、启动穿透服务端
 ```bash
@@ -19,7 +19,7 @@
 ./overfrp-client register --server "127.0.0.1:7659"
 
 #通道标识非固定，每次注册输出的都不一样：
-#通道注册成功，通道标识：jAY+fOaqmUusiHICNZ5mhQ==
+#注册成功，穿透标识：jAY+fOaqmUusiHICNZ5mhQ==
 #标识已保存至：/xxxxx/.identifier
 ```
 
@@ -106,7 +106,7 @@ ssh root@127.0.0.1:2222
 ### 参数
 ```--server [host:port]```指定通道使用的服务器
 
-```--authentication [name]```如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client keygen [name]”生成，服务器需要导入公钥
+```--authentication [name]```如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client newkey [name]”生成，服务器需要导入公钥
 
 ## 3、发布通道
 ```bash
@@ -117,7 +117,7 @@ ssh root@127.0.0.1:2222
 
 ```--identifier [identifier]```指定通道标识
 
-```--authentication [name]```可选参数，如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client keygen [name]”生成，服务器需要导入公钥
+```--authentication [name]```可选参数，如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client newkey [name]”生成，服务器需要导入公钥
 
 ## 4、使用通道
 ```bash
@@ -133,14 +133,14 @@ ssh root@127.0.0.1:2222
 
 ```--server [host:port]```指定通道使用的服务器
 
-```--authentication [name]```可选参数，如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client keygen [name]”生成，服务器需要导入公钥
+```--authentication [name]```可选参数，如果服务器要求登录，需要提供公钥，公钥可使用命令“./overfrp-client newkey [name]”生成，服务器需要导入公钥
 
 ```--identifier [identifier]```指定通道标识
-    
+
 ```--target [host:port]```指定远程目标，对远程目标的请求永远是由`--identifier`关联的发布服务的设备发起。
-    
+
 ```--ssl-off-loading```可选参数，如果指定的目标为HTTPS，需要指定本参数，纯TCP端口转发时，必须忽略本参数。
-    
+
 ```--keep-http-host```可选参数，默认HTTP请求头中的Host是浏览器访问的域名，若指定本参数，则HTTP请求头的Host字段将被修改为`--target`中的主机。纯TCP端口转发时，必须忽略本参数。
 
 
